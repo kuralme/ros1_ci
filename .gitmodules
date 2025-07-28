@@ -1,0 +1,3 @@
+[submodule "tortoisebot_waypoints"]
+	path = tortoisebot_waypoints
+	url = git@github.com:kuralme/tortoisebot_waypoints.git
