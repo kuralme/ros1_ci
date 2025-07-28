@@ -1,8 +1,10 @@
 FROM osrf/ros:noetic-desktop-full-focal
+ENV LANG C.UTF-8
+ENV DEBIAN_FRONTEND=noninteractive
 SHELL [ "/bin/bash" , "-c" ]
 
 # Install Noetic/Gazebo 11 and other dependencies
-RUN apt-get update && apt-get install -y \
+RUN apt-get update && apt-get upgrade -y && apt-get install -y \
   gazebo11 \
   ros-noetic-gazebo-ros-pkgs \
   ros-noetic-gazebo-ros-control \
@@ -20,9 +22,8 @@ RUN apt-get update && apt-get install -y \
 # Prepare the workspace
 RUN mkdir -p /simulation_ws/src
 COPY ./tortoisebot /simulation_ws/src/tortoisebot
+COPY ./tortoisebot_waypoints /simulation_ws/src/tortoisebot_waypoints
 
 # Source ros and build workspace
 RUN source /opt/ros/noetic/setup.bash && cd /simulation_ws && catkin_make \
   && echo "source /simulation_ws/devel/setup.bash" >> ~/.bashrc
-
-WORKDIR /simulation_ws
