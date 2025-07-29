@@ -9,4 +9,4 @@ sudo docker run --rm \
     --env="QT_X11_NO_MITSHM=1" \
     --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" \
     tortoisebot-ros-test:latest \
-    bash -c "source /simulation_ws/devel/setup.bash && roslaunch tortoisebot_gazebo tortoisebot_playground.launch"
+    bash -c "source /simulation_ws/devel/setup.bash && rostest tortoisebot_gazebo test_tortoisebot_waypoints.launch"
