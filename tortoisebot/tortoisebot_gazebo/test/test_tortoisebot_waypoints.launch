@@ -5,8 +5,8 @@
   <include file="$(find tortoisebot_gazebo)/launch/tortoisebot_playground_headless.launch"/>
 
   <!-- Start the tortoisebot_waypoints server node -->
-  <node name="tortoisebot_waypoints_server" pkg="tortoisebot_waypoints" type="tortoisebot_action_server.py"/>
+  <node name="tortoisebot_waypoints_server" pkg="tortoisebot_waypoints" type="tortoisebot_action_server.py" output="log"/>
 
   <!-- Start the tortoisebot_waypoints test -->
-  <test test-name="waypoints_test" pkg="tortoisebot_waypoints" type="waypoints_test_ros_as.py" />
+  <test test-name="waypoints_test" pkg="tortoisebot_waypoints" type="waypoints_test_ros_as.py"/>
 </launch>
