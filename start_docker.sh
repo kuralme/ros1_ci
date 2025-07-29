@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # Build docker image
-docker build -t tortoisebot-ros-test .
+sudo docker build -t tortoisebot-ros-test .
 
 # Start the container and run the gazebo node
-docker run -it \
+sudo docker run --rm \
     --env="DISPLAY=$DISPLAY" \
     --env="QT_X11_NO_MITSHM=1" \
     --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" \
