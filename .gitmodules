@@ -1,3 +1,6 @@
 [submodule "tortoisebot_waypoints"]
 	path = tortoisebot_waypoints
 	url = git@github.com:kuralme/tortoisebot_waypoints.git
+[submodule "jenkins_ci_project"]
+	path = jenkins_ci_project
+	url = git@github.com:kuralme/jenkins_ci_project.git
