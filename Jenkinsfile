@@ -14,7 +14,7 @@ pipeline {
                     sudo rm -f /etc/apt/sources.list.d/ros2.list
                     sudo rm -f /etc/apt/sources.list.d/ros.list
 
-                    # Download and dearmor the GPG key (required for signed-by)
+                    # Download the GPG key (required for signed-by)
                     echo "Downloading and installing ROS GPG key..."
                     curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc -o ros.asc
                     gpg --dearmor -o ros.gpg ros.asc
