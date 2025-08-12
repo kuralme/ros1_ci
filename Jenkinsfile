@@ -47,7 +47,11 @@ pipeline {
         stage('Run ROS2 Test in Container') {
             steps {
                 sh '''
-                sudo docker run --rm tortoisebot-ros-test:latest \
+                sudo docker run --rm \
+                    --env="DISPLAY=$DISPLAY" \
+                    --env="QT_X11_NO_MITSHM=1" \
+                    --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" \
+                    tortoisebot-ros-test:latest \
                     bash -c "source /simulation_ws/devel/setup.bash && rostest tortoisebot_gazebo test_tortoisebot_waypoints.launch"
                 '''
             }
