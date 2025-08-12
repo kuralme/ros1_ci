@@ -2,7 +2,8 @@
 
 <launch>
   <!-- Start a Gazebo empty world in headless mode and spawn Tortoisebot robot -->
-  <include file="$(find tortoisebot_gazebo)/launch/tortoisebot_playground_headless.launch"/>
+  <!-- <include file="$(find tortoisebot_gazebo)/launch/tortoisebot_playground_headless.launch"/> -->
+  <include file="$(find tortoisebot_gazebo)/launch/tortoisebot_playground.launch"/>
 
   <!-- Start the tortoisebot_waypoints server node -->
   <node name="tortoisebot_waypoints_server" pkg="tortoisebot_waypoints" type="tortoisebot_action_server.py" output="log"/>
